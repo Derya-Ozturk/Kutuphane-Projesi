@@ -13,6 +13,6 @@ namespace Kutuphane_Projesi.Models
             optionsBuilder.UseSqlServer("server=LAPTOP-CELPGIDF\\SQLEXPRESS; database=Kutuphane_Projesi; " +
                 "integrated security=true");
         }
-        public DbSet<Kutuphane> Kutuphanes { get; set; }
+        public DbSet<Kitap> Kitaps { get; set; }
     }
 }

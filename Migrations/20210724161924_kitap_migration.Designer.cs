@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kutuphane_Projesi.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210724112913_deneme")]
-    partial class deneme
+    [Migration("20210724161924_kitap_migration")]
+    partial class kitap_migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace Kutuphane_Projesi.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Kutuphane_Projesi.Models.Kutuphane", b =>
+            modelBuilder.Entity("Kutuphane_Projesi.Models.Kitap", b =>
                 {
                     b.Property<int>("KitapID")
                         .ValueGeneratedOnAdd()
@@ -41,7 +41,7 @@ namespace Kutuphane_Projesi.Migrations
 
                     b.HasKey("KitapID");
 
-                    b.ToTable("Kutuphanes");
+                    b.ToTable("Kitaps");
                 });
 #pragma warning restore 612, 618
         }

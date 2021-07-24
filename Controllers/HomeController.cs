@@ -12,7 +12,7 @@ namespace Kutuphane_Projesi.Controllers
         Context c = new Context();
         public IActionResult Index()
         {
-            var degerler = c.Kutuphanes.ToList();
+            var degerler = c.Kitaps.ToList();
             return View(degerler);
         }
         
@@ -22,21 +22,21 @@ namespace Kutuphane_Projesi.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult YeniKitap(Kutuphane k)
+        public IActionResult YeniKitap(Kitap k)
         {
-            c.Kutuphanes.Add(k);
+            c.Kitaps.Add(k);
             c.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult KitapGetir(int id)
         {
-            var kitap = c.Kutuphanes.Find(id);
+            var kitap = c.Kitaps.Find(id);
             return View("KitapGetir", kitap);
         }
 
-        public IActionResult Guncelle(Kutuphane k)
+        public IActionResult Guncelle(Kitap k)
         {
-            var ktp = c.Kutuphanes.Find(k.KitapID);
+            var ktp = c.Kitaps.Find(k.KitapID);
             ktp.KitapAd = k.KitapAd;
             ktp.Yazar = k.Yazar;
             ktp.Tur = k.Tur;
@@ -48,8 +48,8 @@ namespace Kutuphane_Projesi.Controllers
         
         public IActionResult Sil(int id)
         {
-            var degerler = c.Kutuphanes.Find(id);
-            c.Kutuphanes.Remove(degerler);
+            var degerler = c.Kitaps.Find(id);
+            c.Kitaps.Remove(degerler);
             c.SaveChanges();
             return RedirectToAction("Index");
            

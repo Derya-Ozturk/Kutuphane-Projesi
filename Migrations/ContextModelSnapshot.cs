@@ -18,7 +18,7 @@ namespace Kutuphane_Projesi.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Kutuphane_Projesi.Models.Kutuphane", b =>
+            modelBuilder.Entity("Kutuphane_Projesi.Models.Kitap", b =>
                 {
                     b.Property<int>("KitapID")
                         .ValueGeneratedOnAdd()
@@ -39,7 +39,7 @@ namespace Kutuphane_Projesi.Migrations
 
                     b.HasKey("KitapID");
 
-                    b.ToTable("Kutuphanes");
+                    b.ToTable("Kitaps");
                 });
 #pragma warning restore 612, 618
         }

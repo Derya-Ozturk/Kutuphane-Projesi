@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kutuphane_Projesi.Models
 {
-    public class Kutuphane
+    public class Kitap
     {
         [Key]
         public int KitapID { get; set; }
