@@ -1,0 +1,33 @@
+﻿@using Kutuphane_Projesi.Models
+@model List<Kutuphane>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Kitap ID</th>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+        <th>Tür</th>
+        <th>Basım Yılı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.KitapID</td>
+                    <td>@x.KitapAd</td>
+                    <td>@x.Yazar</td>
+                    <td>@x.Tur</td>
+                    <td>@x.BaskiYili</td>
+                    <td><a href="/Home/Sil/?id=@x.KitapID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Home/KitapGetir/?id=@x.KitapID" class="btn btn-success">Güncelle</a></td>
+                </tr>
+            }
+    
+</table>
+<a href="/Home/YeniKitap/" class="btn btn-info">Yeni Kitap Ekle</a>
+

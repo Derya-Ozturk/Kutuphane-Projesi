@@ -1,0 +1,27 @@
+﻿@model Kutuphane_Projesi.Models.Kutuphane
+@{
+    ViewData["Title"] = "YeniKitap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-select" method="post">
+    
+    <b>Kitap Adı</b>
+    <br />
+    @Html.TextBoxFor(x => x.KitapAd, new { @class = "form-control" })
+    <br />
+    <b>Yazar</b>
+    <br />
+    @Html.TextBoxFor(x => x.Yazar, new { @class = "form-control" })
+    <br />
+    <b>Türü</b>
+    <br />
+    @Html.TextBoxFor(x => x.Tur, new { @class = "form-control" })
+    <br />
+    <b>Baskı Yılı</b>
+    <br />
+    @Html.TextBoxFor(x => x.BaskiYili, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kitap Ekle</button>
+</form>
+
